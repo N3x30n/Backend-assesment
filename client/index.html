@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Back End Assessment</title>
+  </head>
+  <body class="container">
+    <button id="complimentButton">Get a compliment</button>
+    <br>
+    <button id="fortuneButton">Get a random fortune</button>
+    <br>
+    <br>
+    <form id="form">
+      <input type="text" id="name" placeholder="Todo"/>
+      <br>
+      <input type="text" id="body" placeholder="What you need to do"/>
+      <button>Submit</button>
+    </form>
+    <br>
+    <form id="update">
+      <input type="number" id="updateId" placeholder="Todo Id change"/>
+      <br>
+      <button>Submit</button>
+    </form>
+    <form id="delete">
+      <input type="number" id="deleteTodo" placeholder="ID you want to delete"/>
+      <br>
+      <button>Delete</button>
+    </form>
+    <ul></ul>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
