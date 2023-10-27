@@ -1,7 +1,7 @@
 let todoList = [
     {
         name: "Test",
-        Body: "Test Body",
+        body: "Test Body",
         id: 1
     }
 ]
@@ -27,17 +27,23 @@ module.exports = {
         res.status(200).send(randomFortune)
     },
     createTodo: (req,res) => {
-        let newTodo = {...req.body, globalID}
-        todoList.unshift(newTodo)
+        const {name, body} = req.body
+        let newTodo = {
+            name,
+            body,
+            id: globalID
+        }
+        todoList.push(newTodo)
+        globalID++
         res.status(200).send(todoList)
         console.log(todoList)
     },
-    updateTodo: (req,res) => {
-        
+    getTodo: (req,res) => {
+        res.status(200).send(todoList[req.params.id - 1])
     },
     deleteTodo: (req,res) => {
-
+        res.status(200).send(todoList[req.params.id - 1])
     }
     
 }
-console.log(todoList)
+// console.log(todoList)

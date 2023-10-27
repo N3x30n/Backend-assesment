@@ -7,13 +7,13 @@ app.use(cors());
 
 app.use(express.json());
 
-const { getCompliment, getFortune, createTodo,updateTodo,deleteTodo} = require('./controller')
+const { getCompliment, getFortune, createTodo,getTodo,deleteTodo} = require('./controller')
 
 
 app.get("/api/compliment", getCompliment);
 app.get('/api/fortune', getFortune);
 app.post('/api/todo', createTodo)
-app.put('/api/todo/:id', updateTodo)
+app.get('/api/todo/:id', getTodo)
 app.delete('/api/todo/:id', deleteTodo)
 
 
